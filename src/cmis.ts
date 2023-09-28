@@ -260,10 +260,7 @@ export namespace cmis {
         let formData = new FormData();
 
         let content: any = multipartData.content;
-        if ('string' == typeof content) {
-          if (typeof (Blob) !== 'undefined')
-            content = new Blob([content]);
-        } else if (typeof (Buffer) !== 'undefined') {
+        if (typeof (Buffer) !== 'undefined') {
           content = new Buffer(content);
         }
         formData.append(
